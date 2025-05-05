@@ -1,14 +1,12 @@
 package com.elcai.compraventaElCAI.Modelo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "vehiculo")
 public class Vehiculo {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "placa", length = 20, nullable = false)
     private String Placa;
     @Column(name = "marca", length = 20, nullable = false)
