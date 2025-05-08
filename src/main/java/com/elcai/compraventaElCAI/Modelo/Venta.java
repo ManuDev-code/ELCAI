@@ -1,5 +1,6 @@
 package com.elcai.compraventaElCAI.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,16 @@ public class Venta {
     private String placa;
     @Column(name = "precio_pactado", nullable = false)
     private Float precioPactado;
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "pk_clientes", referencedColumnName = "ID")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "pk_vehiculos", referencedColumnName = "placa")
+    private Vehiculo vehiculo;
 
     public Venta() {
     }

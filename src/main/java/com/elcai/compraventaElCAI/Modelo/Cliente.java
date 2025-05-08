@@ -1,6 +1,9 @@
 package com.elcai.compraventaElCAI.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -18,6 +21,9 @@ public class Cliente {
     @Column(name = "estado")
     private String Estado = "activo";
 
+    @OneToMany(mappedBy = "cliente")
+    @JsonManagedReference
+    List<Venta> ventas;
     public Cliente() {
     }
 
