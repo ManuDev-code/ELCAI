@@ -15,7 +15,34 @@ public class Venta {
     @Column(name = "placa_vehiculo", length = 20, nullable = false)
     private String placa;
     @Column(name = "precio_pactado", nullable = false)
-    private Float precioPactado;
+    private Double precioPactado;
+    private Double precioInicial;
+    private Double contraofertaCliente;
+    private Boolean aceptadoPorVendedor;
+
+    public Double getPrecioInicial() {
+        return precioInicial;
+    }
+
+    public void setPrecioInicial(Double precioInicial) {
+        this.precioInicial = precioInicial;
+    }
+
+    public Double getContraofertaCliente() {
+        return contraofertaCliente;
+    }
+
+    public void setContraofertaCliente(Double contraofertaCliente) {
+        this.contraofertaCliente = contraofertaCliente;
+    }
+
+    public Boolean getAceptadoPorVendedor() {
+        return aceptadoPorVendedor;
+    }
+
+    public void setAceptadoPorVendedor(Boolean aceptadoPorVendedor) {
+        this.aceptadoPorVendedor = aceptadoPorVendedor;
+    }
 
     @ManyToOne
     @JsonBackReference
@@ -30,7 +57,7 @@ public class Venta {
     public Venta() {
     }
 
-    public Venta(Integer codigo, String idCliente, String placa, Float precioPactado) {
+    public Venta(Integer codigo, String idCliente, String placa, Double precioPactado) {
         this.codigo = codigo;
         this.idCliente = idCliente;
         this.placa = placa;
@@ -61,11 +88,11 @@ public class Venta {
         this.placa = placa;
     }
 
-    public Float getPrecioPactado() {
+    public Double getPrecioPactado() {
         return precioPactado;
     }
 
-    public void setPrecioPactado(Float precioPactado) {
+    public void setPrecioPactado(Double precioPactado) {
         this.precioPactado = precioPactado;
     }
 }
