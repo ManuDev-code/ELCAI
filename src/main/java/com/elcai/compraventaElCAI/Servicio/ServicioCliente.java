@@ -14,7 +14,7 @@ public class ServicioCliente {
     @Autowired
     ICliente iCliente;
 
-    public Cliente guardar(String idCliente, Cliente datosGuardar) throws Exception {
+    public Cliente guardar(Long idCliente, Cliente datosGuardar) throws Exception {
         try {
             Optional<Cliente> clienteEncontrado = this.iCliente.findById(idCliente);
             if(!clienteEncontrado.isPresent())
@@ -34,7 +34,7 @@ public class ServicioCliente {
         }
     } // Fin metodo consulta general
 
-    public Cliente consultaIndividual(String idCliente) throws Exception {
+    public Cliente consultaIndividual(Long idCliente) throws Exception {
         try {
             Optional<Cliente> clienteEncontrado = this.iCliente.findById(idCliente);
             if (clienteEncontrado.isPresent())
@@ -66,7 +66,7 @@ public class ServicioCliente {
     } // Fin metodo consultar por estado
 
 
-    public Boolean eliminarCliente(String idCliente) throws Exception {
+    public Boolean eliminarCliente(Long idCliente) throws Exception {
         try {
             Optional<Cliente> clienteEncontrado = this.iCliente.findById(idCliente);
             if(clienteEncontrado.isPresent()){
@@ -81,7 +81,7 @@ public class ServicioCliente {
     } // Fin del metodo eliminar
 
 
-    public Cliente modificarCliente (String idCliente, Cliente datosModificar) throws Exception{
+    public Cliente modificarCliente (Long idCliente, Cliente datosModificar) throws Exception{
         try {
             Optional<Cliente> clienteEncontrado = this.iCliente.findById(idCliente);
             if (clienteEncontrado.isPresent()) {

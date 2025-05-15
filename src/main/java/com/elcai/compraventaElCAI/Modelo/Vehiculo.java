@@ -8,64 +8,64 @@ public class Vehiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "placa", length = 20, nullable = false)
-    private String Placa;
+    private String placa;
     @Column(name = "marca", length = 20, nullable = false)
-    private String Marca;
+    private String marca;
     @Column(name = "modelo", length = 50, nullable = false)
-    private String Modelo;
+    private String modelo;
     @Column(name = "valor", nullable = false)
-    private Float Valor;
+    private Float valor;
     @Column(name = "estado", nullable = false)
-    private String Estado = "disponible";
+    private String estado = "disponible";
 
     public Vehiculo() {
     }
 
     public Vehiculo(String placa, String marca, String modelo, Float valor, String estado) {
-        Placa = placa;
-        Marca = marca;
-        Modelo = modelo;
-        Valor = valor;
-        Estado = estado;
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.valor = valor;
+        this.estado = estado;
     }
 
     public String getPlaca() {
-        return Placa;
+        return placa;
     }
 
     public void setPlaca(String placa) {
-        Placa = placa;
+        this.placa = placa;
     }
 
     public String getMarca() {
-        return Marca;
+        return marca;
     }
 
     public void setMarca(String marca) {
-        Marca = marca;
+        this.marca = marca;
     }
 
     public String getModelo() {
-        return Modelo;
+        return modelo;
     }
 
     public void setModelo(String modelo) {
-        Modelo = modelo;
+        this.modelo = modelo;
     }
 
     public Float getValor() {
-        return Valor;
+        return valor;
     }
 
     public void setValor(Float valor) {
-        Valor = valor;
+        this.valor = valor;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }

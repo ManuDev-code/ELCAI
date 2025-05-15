@@ -11,15 +11,15 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", length = 20, nullable = false)
-    private String ID;
+    private Long id;
     @Column(name = "nombre", length = 100, nullable = false)
-    private String Nombre;
+    private String nombre;
     @Column(name = "direccion", length = 200, nullable = false )
-    private String Direccion;
+    private String direccion;
     @Column(name = "telefono", length = 20, nullable = false)
-    private String Telefono;
+    private String telefono;
     @Column(name = "estado")
-    private String Estado = "activo";
+    private String estado = "activo";
 
     @OneToMany(mappedBy = "cliente")
     @JsonManagedReference
@@ -27,51 +27,51 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String ID, String nombre, String direccion, String telefono, String estado) {
-        this.ID = ID;
-        Nombre = nombre;
-        Direccion = direccion;
-        Telefono = telefono;
-        Estado = estado;
+    public Cliente(Long ID, String nombre, String direccion, String telefono, String estado) {
+        this.id = ID;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.estado = estado;
     }
 
-    public String getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 
     public String getTelefono() {
-        return Telefono;
+        return telefono;
     }
 
     public void setTelefono(String telefono) {
-        Telefono = telefono;
+        this.telefono = telefono;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 }
