@@ -8,8 +8,8 @@ import java.util.List;
 
 @Repository
 public interface ICliente extends JpaRepository<Cliente, String> {
-    List<Cliente> consultaNombreCliente(String nombreCliente);
+    List<Cliente> findByNombre(String Nombre);
 
-    List<Cliente> consultaEstadoCliente(String estadoCliente);
+    List<Cliente> findByEstado(String Estado);
 }
 

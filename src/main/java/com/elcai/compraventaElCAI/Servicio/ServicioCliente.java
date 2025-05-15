@@ -50,7 +50,7 @@ public class ServicioCliente {
 
     public List<Cliente> consultaNombreCliente(String nombreCliente) throws Exception {
         try {
-            return this.iCliente.consultaNombreCliente(nombreCliente);
+            return this.iCliente.findByNombre(nombreCliente);
         } catch (Exception error) {
             throw new Exception(error.getMessage());
         }
@@ -59,7 +59,7 @@ public class ServicioCliente {
 
     public List<Cliente> consultaEstadoCliente (String estadoCliente) throws Exception {
         try {
-            return this.iCliente.consultaEstadoCliente(estadoCliente);
+            return this.iCliente.findByEstado(estadoCliente);
         } catch (Exception error) {
             throw new Exception(error.getMessage());
         }

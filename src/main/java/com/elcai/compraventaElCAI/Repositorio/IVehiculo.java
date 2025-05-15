@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface IVehiculo extends JpaRepository<Vehiculo, String> {
-    List<Vehiculo> findByMarca(String marca);
+    List<Vehiculo> findByMarca(String Marca);
 }
