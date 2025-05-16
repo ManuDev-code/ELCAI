@@ -16,7 +16,7 @@ public class ControladorCliente {
     ServicioCliente servicioCliente;
 
     @PostMapping("/{idCliente}")
-    public ResponseEntity<?> guardar(@PathVariable String idCliente, @RequestBody Cliente datosGuardar) throws Exception {
+    public ResponseEntity<?> guardar(@PathVariable Long idCliente, @RequestBody Cliente datosGuardar) throws Exception {
         try {
             return ResponseEntity
                     .status(HttpStatus.CREATED)
@@ -42,8 +42,8 @@ public class ControladorCliente {
     } // Fin del metodo consulta general
 
 
-    @GetMapping("/{idCliente}")
-    public ResponseEntity<?> consultaIndividual (@PathVariable String idCliente) throws Exception {
+    @GetMapping("/id/{idCliente}")
+    public ResponseEntity<?> consultaIndividual (@PathVariable Long idCliente) throws Exception {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -55,7 +55,7 @@ public class ControladorCliente {
         }
     } // Fin metodo consulta individual
 
-    @GetMapping("/{nombreCliente}")
+    @GetMapping("/nombre/{nombreCliente}")
     public ResponseEntity<?> consultaNombreCliente(@PathVariable String nombreCliente) throws Exception {
         try {
             return ResponseEntity
@@ -69,7 +69,7 @@ public class ControladorCliente {
     } // Fin metodo consulta por nombre
 
 
-    @GetMapping("/{estadoCliente}")
+    @GetMapping("/estado/{estadoCliente}")
     public  ResponseEntity<?> consultaEstadoCliente (@PathVariable String estadoCliente) throws Exception {
         try {
             return ResponseEntity
@@ -82,8 +82,9 @@ public class ControladorCliente {
         }
     }
 
+
     @DeleteMapping("/{idCliente}")
-    public ResponseEntity<?> elimininarCliente (@PathVariable String idCliente) throws Exception{
+    public ResponseEntity<?> elimininarCliente (@PathVariable Long idCliente) throws Exception{
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
@@ -96,8 +97,9 @@ public class ControladorCliente {
     } // Fin metodo eliminar
 
 
+
     @PutMapping("/{idCliente}")
-    public ResponseEntity<?> modificarCliente(@PathVariable String idCliente, @RequestBody Cliente datosModificar) throws Exception {
+    public ResponseEntity<?> modificarCliente(@PathVariable Long idCliente, @RequestBody Cliente datosModificar) throws Exception {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
