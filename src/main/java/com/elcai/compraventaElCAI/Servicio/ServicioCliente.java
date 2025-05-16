@@ -48,7 +48,7 @@ public class ServicioCliente {
     } // Fin metodo consulta individual
 
 
-    public List<Cliente> consultaNombreCliente(String nombreCliente) throws Exception {
+    public List<Cliente> findByNombre(String nombreCliente) throws Exception {
         try {
             return this.iCliente.findByNombre(nombreCliente);
         } catch (Exception error) {
@@ -57,7 +57,7 @@ public class ServicioCliente {
     } // Fin metodo consultar por nombre de usuario
 
 
-    public List<Cliente> consultaEstadoCliente (String estadoCliente) throws Exception {
+    public List<Cliente> findByEstado (String estadoCliente) throws Exception {
         try {
             return this.iCliente.findByEstado(estadoCliente);
         } catch (Exception error) {

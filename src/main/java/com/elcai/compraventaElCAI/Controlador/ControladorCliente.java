@@ -56,11 +56,11 @@ public class ControladorCliente {
     } // Fin metodo consulta individual
 
     @GetMapping("/{nombreCliente}")
-    public ResponseEntity<?> consultaNombreCliente(@PathVariable String nombreCliente) throws Exception {
+    public ResponseEntity<?> findByNombre(@PathVariable String nombreCliente) throws Exception {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.servicioCliente.consultaNombreCliente(nombreCliente));
+                    .body(this.servicioCliente.findByNombre(nombreCliente));
         } catch (Exception error) {
             return  ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
@@ -70,11 +70,11 @@ public class ControladorCliente {
 
 
     @GetMapping("/{estadoCliente}")
-    public  ResponseEntity<?> consultaEstadoCliente (@PathVariable String estadoCliente) throws Exception {
+    public  ResponseEntity<?> findByEstado (@PathVariable String estadoCliente) throws Exception {
         try {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(this.servicioCliente.consultaEstadoCliente(estadoCliente));
+                    .body(this.servicioCliente.findByEstado(estadoCliente));
         } catch (Exception error) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
