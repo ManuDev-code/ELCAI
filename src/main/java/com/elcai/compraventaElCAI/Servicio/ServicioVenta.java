@@ -17,9 +17,10 @@ public class ServicioVenta {
     public Venta guardar(int codigo, Venta datosGuardar) throws Exception {
         try {
             Optional<Venta> ventaFinalizada = this.iVenta.findById(codigo);
-            if (!ventaFinalizada.isPresent())
+            if (!ventaFinalizada.isPresent()) {
+                datosGuardar.setCodigo(codigo);
                 return this.iVenta.save(datosGuardar);
-            else {
+            }else {
                 throw new Exception("Numero de factura ya existente");
             }
         } catch (Exception error){
@@ -86,7 +87,6 @@ public class ServicioVenta {
             if (ventaOptional.isPresent()) {
                 Venta venta = ventaOptional.get();
 
-                // Suponemos que no se puede ofrecer menos del 80% del precio inicial
                 Double precioMinimoAceptable = venta.getPrecioInicial() * 0.8;
 
                 venta.setContraofertaCliente(contraofertaCliente);

@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 @Table(name = "vehiculo")
 public class Vehiculo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "placa", length = 20, nullable = false)
     private String placa;
     @Column(name = "marca", length = 20, nullable = false)

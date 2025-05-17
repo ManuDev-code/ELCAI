@@ -90,7 +90,7 @@ public class ServicioCliente {
                 clienteModificar.setDireccion(datosModificar.getDireccion());
                 clienteModificar.setTelefono(datosModificar.getTelefono());
                 clienteModificar.setEstado(datosModificar.getEstado());
-                return this.iCliente.save(clienteModificar);
+                return this.iCliente.saveAndFlush(clienteModificar);
             } else
                 throw new Exception("Usuario no encontrado");
         } catch (Exception error) {

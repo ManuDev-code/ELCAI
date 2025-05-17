@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 @Table(name = "venta")
 public class Venta {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo", nullable = false)
     private Integer codigo;
     @Column(name = "id_cliente", length = 20, nullable = false)
@@ -45,12 +44,12 @@ public class Venta {
     }
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "cliente-ventas")
     @JoinColumn(name = "pk_clientes", referencedColumnName = "ID")
     private Cliente cliente;
 
     @ManyToOne
-    @JsonBackReference
+    @JsonBackReference(value = "producto-ventas")
     @JoinColumn(name = "pk_vehiculos", referencedColumnName = "placa")
     private Vehiculo vehiculo;
 

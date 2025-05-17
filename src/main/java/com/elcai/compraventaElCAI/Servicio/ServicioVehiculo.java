@@ -18,9 +18,10 @@ public class ServicioVehiculo {
     public Vehiculo guardar(String placa, Vehiculo datosGuardar) throws Exception {
         try {
             Optional<Vehiculo> vehiculoEncontrado = this.iVehiculo.findById(placa);
-            if (!vehiculoEncontrado.isPresent())
+            if (!vehiculoEncontrado.isPresent()) {
+                datosGuardar.setPlaca(placa);
                 return this.iVehiculo.save(datosGuardar);
-            else {
+            }else {
                 throw new Exception("El vehículo ya fue registrado");
             }
         } catch (Exception error){

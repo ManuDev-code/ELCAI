@@ -57,7 +57,7 @@ public class ControladorVenta {
     }
 
 
-    @DeleteMapping("/{placa}")
+    @DeleteMapping("/{codigo}")
     public ResponseEntity<?> eliminarVenta (@PathVariable int codigo) throws Exception {
         try {
             return ResponseEntity
@@ -72,7 +72,7 @@ public class ControladorVenta {
     }
 
 
-    @PutMapping("/placa")
+    @PutMapping("/{codigo}")
     public ResponseEntity<?> modificarVenta(@PathVariable int codigo, @RequestBody Venta datosModificar) throws Exception {
         try {
             return ResponseEntity

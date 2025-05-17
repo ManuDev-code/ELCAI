@@ -10,7 +10,7 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", length = 20, nullable = false)
+    @Column(name = "id", length = 20, nullable = false)
     private Long id;
     @Column(name = "nombre", length = 100, nullable = false)
     private String nombre;
@@ -22,13 +22,13 @@ public class Cliente {
     private String estado = "activo";
 
     @OneToMany(mappedBy = "cliente")
-    @JsonManagedReference
+    @JsonManagedReference(value = "cliente-ventas")
     List<Venta> ventas;
     public Cliente() {
     }
 
-    public Cliente(Long ID, String nombre, String direccion, String telefono, String estado) {
-        this.id = ID;
+    public Cliente(Long id, String nombre, String direccion, String telefono, String estado) {
+        this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;

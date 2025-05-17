@@ -44,7 +44,7 @@ public class ControladorVehiculo {
         }
     } // Fin del metodo consulta general
 
-    @GetMapping("/{placa}")
+    @GetMapping("/placa/{placa}")
     public ResponseEntity<?> consultaIndividual(@PathVariable String placa) throws Exception {
         try {
             return ResponseEntity
@@ -57,7 +57,7 @@ public class ControladorVehiculo {
         }
     } // Fin metodo consulta individual
 
-    @GetMapping("/{marca}")
+    @GetMapping("/marca/{marca}")
     public ResponseEntity<?> consultarMarca (@PathVariable String marca) throws Exception {
         try {
             return ResponseEntity
@@ -87,7 +87,7 @@ public class ControladorVehiculo {
     } // Fin del metodo eliminar
 
 
-    @PutMapping("/placa")
+    @PutMapping("/{placa}")
     public ResponseEntity<?> modificarVehiculo(@PathVariable String placa, @RequestBody Vehiculo datosModificar) throws Exception {
         try {
             return ResponseEntity
